@@ -1,5 +1,14 @@
-//Style for button Pay with Kamba - Merchant
+function ready (fn)
+{
+    if (document.readyState != 'loading') {
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
 
+ready(function(){
+    //Style for button Pay with Kamba - Merchant
     var btnOpenWidgetKamba = document.querySelector(".btnOpenWidgetKamba");
     btnOpenWidgetKamba.innerHTML = "Pagar com a Kamba";
     var imgButtonKamba = document.createElement("img");
@@ -22,6 +31,7 @@
     btnOpenWidgetKamba.style.justifyContent = 'center';
     btnOpenWidgetKamba.style.alignItems = 'center';
     btnOpenWidgetKamba.style.boxSizing = 'border-box';
+});
 
 (function () {
 (function bootstrap() {
@@ -40,16 +50,17 @@
             }
 
             ready(function(){
+                //Send - Post request
 
-            //Send - Post request
-            let url;
-            let token = 'Token ';
+                let url;
+                let token = 'Token ';
 
-            if (secondary_config.enviroment == 'sandbox'){
-                url = "https://sandbox.usekamba.com/v1/checkouts/";
-            }else{
-                url = "https://api.usekamba.com/v1/checkouts/";
-            }
+                if (secondary_config.enviroment == 'sandbox'){
+                    url = "https://sandbox.usekamba.com/v1/checkouts/";
+                }else{
+                    url = "https://api.usekamba.com/v1/checkouts/";
+                }
+
                 fetch(url, {method: 'POST',
                     headers: {
                                 'Content-Type': 'application/json',
