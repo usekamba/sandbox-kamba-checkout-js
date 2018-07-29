@@ -3,7 +3,7 @@
     var btnOpenWidgetKamba = document.querySelector(".btnOpenWidgetKamba");
     btnOpenWidgetKamba.innerHTML = "Pagar com a Kamba";
     var imgButtonKamba = document.createElement("img");
-    imgButtonKamba.src="PayLogo-kamba.png";
+    imgButtonKamba.src="images/PayLogo-kamba.png";
     imgButtonKamba.classList.add("classImgButtonKamba");         
     btnOpenWidgetKamba.appendChild(imgButtonKamba);
     
@@ -29,7 +29,7 @@
 
         window.KAMBA = window.KAMBA || {};
 
-        window.kamba = function kamba(initial_config, header) {
+        window.kamba = function kamba(initial_config, secondary_config) {
 
             function ready (fn){
                 if (document.readyState != 'loading') {
@@ -42,14 +42,18 @@
             ready(function(){
 
             //Send - Post request
-            var token = 'Token ';
+            let url;
+            let token = 'Token ';
 
-            const url = 'https://kamba-api-staging.herokuapp.com/v1/checkouts/';
+            if (secondary_config.enviroment == 'sandbox'){
+                url = "https://sandbox.usekamba.com/v1/checkouts/";
+            }else{
+                url = "https://api.usekamba.com/v1/checkouts/";
+            }
                 fetch(url, {method: 'POST',
                     headers: {
                                 'Content-Type': 'application/json',
-                                'authorization': token.concat(header.api_key),
-                                'enviroment': header.enviroment
+                                'authorization': token.concat(secondary_config.api_key)
                             }, 
                     body:  JSON.stringify({
                             channel: initial_config.channel,
@@ -101,7 +105,7 @@
 
                         <header class="checkoutHeader">
                              
-                            <img src="KambaLogoGreen-kamba.png" class="imgLogoKamba"> 
+                            <img src="images/KambaLogoGreen-kamba.png" class="imgLogoKamba"> 
 
                         </header>
                      
@@ -132,7 +136,7 @@
                                 
                                 <div class="partDetailPay">
                                     <div class="securityPay">
-                                        <a href="#" class="textSecurityPay"><img src="icons8-lock-kamba.png" class="lock"> <span class="ps"> Pagamento seguro</span></a>
+                                        <a href="#" class="textSecurityPay"><img src="images/icons8-lock-kamba.png" class="lock"> <span class="ps"> Pagamento seguro</span></a>
                                     </div>
 
 
