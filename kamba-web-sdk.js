@@ -3,7 +3,7 @@
     var btnOpenWidgetKamba = document.querySelector(".btnOpenWidgetKamba");
     btnOpenWidgetKamba.innerHTML = "Pagar com a Kamba";
     var imgButtonKamba = document.createElement("img");
-    imgButtonKamba.src="images/PayLogo-kamba.png";
+    imgButtonKamba.src="PayLogo-kamba.png";
     imgButtonKamba.classList.add("classImgButtonKamba");         
     btnOpenWidgetKamba.appendChild(imgButtonKamba);
     
@@ -105,7 +105,7 @@
 
                         <header class="checkoutHeader">
                              
-                            <img src="images/KambaLogoGreen-kamba.png" class="imgLogoKamba"> 
+                            <img src="KambaLogoGreen-kamba.png" class="imgLogoKamba"> 
 
                         </header>
                      
@@ -136,7 +136,7 @@
                                 
                                 <div class="partDetailPay">
                                     <div class="securityPay">
-                                        <a href="#" class="textSecurityPay"><img src="images/icons8-lock-kamba.png" class="lock"> <span class="ps"> Pagamento seguro</span></a>
+                                        <a href="#" class="textSecurityPay"><img src="icons8-lock-kamba.png" class="lock"> <span class="ps"> Pagamento seguro</span></a>
                                     </div>
 
 
