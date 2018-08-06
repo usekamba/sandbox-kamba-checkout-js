@@ -1,1 +1,1 @@
-# teste-kamba-checkout-js
+# sandbox-kamba-checkout-js
